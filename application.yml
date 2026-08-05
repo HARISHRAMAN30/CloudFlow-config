@@ -1,0 +1,53 @@
+cloudflow:
+  web:
+    correlation-id:
+      enabled: true
+    request-logging:
+      enabled: true
+    exclude-paths:
+      - /actuator/**
+      - /swagger-ui/**
+      - /v3/api-docs/**
+
+  security:
+    enabled: true
+    authentication-enabled: false
+    csrf-enabled: false
+    cors-enabled: true
+    stateless: true
+    public-urls:
+      - /actuator/health
+      - /swagger-ui/**
+      - /v3/api-docs/**
+      - /auth/login
+      - /auth/refresh
+      - /test/public
+      - /jwt/**
+
+  jwt:
+    enabled: true
+    issuer: cloudflow
+    secret: ${JWT_SECRET}
+    access-token-expiration: 3600000
+    refresh-token-expiration: 604800000
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level [%X{correlationId}] %logger - %msg%n"
