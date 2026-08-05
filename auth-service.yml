@@ -38,6 +38,7 @@ spring:
       - /auth/refresh
       - /test/public
       - /jwt/**
+      - /api/v1/auth/**
 
 eureka:
   client:
