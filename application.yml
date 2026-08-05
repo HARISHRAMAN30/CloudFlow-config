@@ -27,7 +27,7 @@ cloudflow:
   jwt:
     enabled: true
     issuer: cloudflow
-    secret: ${JWT_SECRET}
+    secret: VGhpc0lzQVN1cGVyU2VjcmV0S2V5Rm9ySldUU2lnbmluZzEyMzQ1Njc4OTA=
     access-token-expiration: 3600000
     refresh-token-expiration: 604800000
 
