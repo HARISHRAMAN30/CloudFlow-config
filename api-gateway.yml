@@ -34,7 +34,9 @@ endpoints:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+      mvc:
+        routes:
+          - id: auth-service
+            uri: lb://AUTH-SERVICE
+            predicates:
+              - Path=/api/v1/auth/**
