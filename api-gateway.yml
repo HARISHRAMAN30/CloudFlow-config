@@ -12,6 +12,20 @@ eureka:
     instance:
       prefer-ip-address: true
 
+cloudflow:
+  security:
+    enabled: true
+    authentication-enabled: false
+    csrf-enabled: false
+    cors-enabled: true
+    stateless: true
+    public-urls:
+      - /api/v1/auth/**
+      - /swagger-ui/**
+      - /swagger-ui.html
+      - /v3/api-docs/**
+      - /actuator/**
+
 endpoints:
   web:
     exposure:
