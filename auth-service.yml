@@ -24,6 +24,21 @@ spring:
     enabled: true
     locations: classpath:db/migration
 
+  security:
+    enabled: true
+    authentication-enabled: false
+    csrf-enabled: false
+    cors-enabled: true
+    stateless: true
+    public-urls:
+      - /actuator/health
+      - /swagger-ui/**
+      - /v3/api-docs/**
+      - /auth/login
+      - /auth/refresh
+      - /test/public
+      - /jwt/**
+
 eureka:
   client:
     enabled: true
