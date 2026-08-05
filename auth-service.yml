@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: ${SERVER_PORT:9001}
 
 spring:
   datasource:
@@ -49,10 +49,11 @@ eureka:
   instance:
     hostname: localhost
     prefer-ip-address: false
+    instance-id: ${spring.application.name}:${server.port}
 
 logging:
   level:
-    org.springframework.security: TRACE
+    org.springframework.security: INFO
 
 
 
