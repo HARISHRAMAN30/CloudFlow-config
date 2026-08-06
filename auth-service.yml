@@ -19,6 +19,11 @@ spring:
           preferred_instant_jdbc_type: TIMESTAMP
         jdbc:
           time_zone: UTC
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 3000
 
   flyway:
     enabled: true
@@ -38,6 +43,9 @@ cloudflow:
       - /v3/api-docs/**
       - /actuator/**
 
+  redis:
+    enabled: true
+    key-prefix: cloudflow
 eureka:
   client:
     enabled: true
